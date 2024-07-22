@@ -215,9 +215,11 @@ const TravelForm = () => {
     navigate("/home", { state: { username: name } });
   };
   const vehicle = ["flight", "truck", "bus", "car", "bike", "scooter"];
+  const [selectedVehicle, setSelectedVehicle] = useState("truck");
   const [selectedOption, setSelectedOption] = useState("Truck");
   const handleClick = (vehicle) => {
     resetFormData();
+    setSelectedVehicle(vehicle);
     switch (vehicle) {
       case "flight":
         setSelectedOption("Flight");
@@ -412,7 +414,12 @@ const TravelForm = () => {
             {[flight, truck, bus, car, bike, scooter].map((option, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center md:p-[21px] bg-[#ffffff60] border-4 border-white shadow-lg w-[100px] md:w-[160px] hover:bg-white hover:border-2 hover:border-[#9DDE8B] rounded-sm cursor-pointer"
+                className={`flex flex-col items-center justify-center md:p-[21px] bg-[#ffffff60] ${
+                  (selectedVehicle === "truck" && vehicle[index] === "truck") ||
+                  selectedVehicle === vehicle[index]
+                    ? "border-2 border-[#9DDE8B]"
+                    : "border-4 border-white"
+                } shadow-lg w-[100px] md:w-[160px] hover:bg-white hover:border-2 hover:border-[#9DDE8B] rounded-sm cursor-pointer`}
                 onClick={() => handleClick(vehicle[index])}
               >
                 <img src={option} alt={option} className="h-24 w-24" />
