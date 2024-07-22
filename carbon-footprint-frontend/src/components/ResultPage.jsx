@@ -189,7 +189,7 @@ const EmissionsCard = () => {
                   <p className="text-[10px] lg:text-xs outfit-medium">
                     Emissions Intensity
                   </p>
-                  <div className="text-4xl lg:text-5xl text-left outfit-medium lg:mt-1">
+                  <div className="text-4xl lg:text-5xl text-center outfit-medium lg:mt-1">
                     {formatNumber(intense)}
                   </div>
                 </div>
@@ -377,7 +377,7 @@ const EmissionsCard = () => {
                   <p className="text-[10px] lg:text-xs outfit-medium">
                     Emissions Intensity
                   </p>
-                  <div className="text-4xl lg:text-5xl text-left outfit-medium lg:mt-1">
+                  <div className="text-4xl lg:text-5xl text-center outfit-medium lg:mt-1">
                     {formatNumber(intense)}
                   </div>
                 </div>
