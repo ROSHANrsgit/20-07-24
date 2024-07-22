@@ -303,7 +303,7 @@ const EmissionsCard = () => {
                 {/* Added Infi Image */}
               </div>
 
-              <div className="text-left outfit-medium text-[11px] lg:text-[14px] mt-4 lg:mt-4 leading-[1]">
+              <div className="text-left outfit-medium text-[11px] lg:text-[14px] mt-4 lg:mt-8 leading-[1]">
                 <p>To know more about carbon offsetting</p>
                 <p>
                   call{" "}
