@@ -165,7 +165,7 @@ const EmissionsCard = () => {
                   <p className="text-xs outfit-medium ">
                     Emission Calculated by
                   </p>
-                  <p className="text-2xl outfit-bold text-[#40A578]">
+                  <p className="text-xl lg:text-2xl outfit-bold text-[#40A578]">
                     {formData.name.toUpperCase()}
                   </p>
                   <p className="text-xs outfit-medium">Updated time:</p>
@@ -184,7 +184,7 @@ const EmissionsCard = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex pt-4 gap-4 justify-between mt-[35px]">
+              <div className="flex pt-4 gap-4 justify-between lg:mt-[35px]">
                 <div>
                   <p className="text-[10px] lg:text-xs outfit-medium">
                     Emissions Intensity
@@ -226,7 +226,7 @@ const EmissionsCard = () => {
             <div className="lg:flex-1 bg-white p-[35px] lg:w-[500px] rounded-md lg:mb-0  border-2 border-[#9DDE8B] ">
               <p className="text-xs outfit-medium">Cost to Offset</p>
               <div className="mb-2 flex justify-between items-center border-b-2 border-[#9DDE8B] pb-4">
-                <p className="text-xl md:text-4xl outfit-bold">
+                <p className="text-2xl lg:text-4xl outfit-bold">
                   {"₹"}
                   {!yes
                     ? offset.toLocaleString("en-IN", {
@@ -257,10 +257,10 @@ const EmissionsCard = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4 items-center mt-2 lg:mt-4">
+              <div className="flex gap-4 items-center mt-4">
                 {/* Added QR Image */}
                 <div className="flex flex-col ">
-                  <p className="text-[12px] lg: text-[14px] outfit-medium">
+                  <p className="text-[11px] lg:text-[14px] outfit-medium">
                     Go Digital with{" "}
                     <a
                       href="https://www.infi.business "
@@ -272,17 +272,17 @@ const EmissionsCard = () => {
                     </a>
                   </p>
                   <img
-                    className="w-60 h-20 lg:w-60 lg:h-24 -mt-4 lg:mt-0 "
+                    className="w-60 h-16 lg:w-60 lg:h-24 -mt-4 lg:mt-0 "
                     src={infi}
                     alt="Infi Business"
                   />
-                  <p className="text-[14px] outfit-medium leading-[1]">
+                  <p className="text-[11px] lg:text-[14px] outfit-medium leading-[1]">
                     You're fighting climate change by funding these projects
                   </p>
                   <div className="mt-2">
                     {/* Added Create your infibusiness card button */}
                     <button
-                      className="mx-auto outfit-medium flex justify-center items-center bg-[#9DDE8B] h-12 lg:w-60 text-center text-white px-4 py-8 sm:py-2  rounded-md hover:bg-[#40A578] focus:outline-none focus:ring-[#40A578] text-sm "
+                      className="mx-auto outfit-medium flex justify-center items-center bg-[#9DDE8B] h-12 lg:w-60 text-center text-white px-4 py-2  rounded-md hover:bg-[#40A578] focus:outline-none focus:ring-[#40A578] text-[14px] lg:text-sm "
                       onClick={() => {
                         window.open(
                           "https://docs.google.com/forms/d/e/1FAIpQLScticnp69X320x_bJYMi8tw1EQdygWkPUNaX4kt2nsbblojhw/viewform?pli=1",
@@ -296,14 +296,14 @@ const EmissionsCard = () => {
                   </div>
                 </div>
                 <img
-                  className="w-40 h-40 lg:w-42 lg:h-42 mt-8"
+                  className="w-40 h-40 lg:w-42 lg:h-42 lg:mt-8"
                   src={qr}
                   alt="QR Code"
                 />
                 {/* Added Infi Image */}
               </div>
 
-              <div className="text-left outfit-medium text-[14px] mt-8 lg:mt-4 leading-[1]">
+              <div className="text-left outfit-medium text-[11px] lg:text-[14px] mt-4 lg:mt-4 leading-[1]">
                 <p>To know more about carbon offsetting</p>
                 <p>
                   call{" "}
@@ -351,7 +351,7 @@ const EmissionsCard = () => {
                   <p className="text-xs outfit-medium mb-[4px]">
                     Emission Calculated by
                   </p>
-                  <p className="text-2xl outfit-bold text-[#40A578]">
+                  <p className="text-xl lg:text-2xl outfit-bold text-[#40A578]">
                     {formData.name.toUpperCase()}
                   </p>
                   <p className="text-xs outfit-medium">Updated time:</p>
@@ -370,7 +370,7 @@ const EmissionsCard = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex pt-4 gap-4 justify-between mt-[35px]">
+              <div className="flex pt-4 gap-4 justify-between lg:mt-[35px]">
                 <div>
                   <p className="text-[10px] lg:text-xs outfit-medium">
                     Emissions Intensity
