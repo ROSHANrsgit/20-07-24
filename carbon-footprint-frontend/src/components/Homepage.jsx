@@ -49,7 +49,7 @@ const MainPage = () => {
   return (
     <div
       style={{ backgroundImage: `url(${backgroundImage})` }}
-      className="bg-cover bg-center flex flex-col lg:flex-row items-center justify-center lg:justify-around h-screen pt-8 lg:pt-0"
+      className="bg-cover bg-center flex flex-col lg:flex-row items-center justify-center lg:justify-around h-fit md:h-screen pt-8 lg:pt-0"
     >
       <div className="lg:items-start">
         <div className="mb-8 md:mb-14 text-4xl md:text-5xl lg:text-6xl flex justify-between">

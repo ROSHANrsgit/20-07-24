@@ -82,7 +82,7 @@ const PrintedcardForm = () => {
   return (
     <div
       style={{ backgroundImage: `url(${backgroundImage})` }}
-      className="bg-cover bg-center flex flex-col lg:flex-row items-center justify-center lg:justify-around min-h-fit h-screen"
+      className="bg-cover bg-center flex flex-col lg:flex-row items-center justify-center lg:justify-around h-fit md:h-screen"
     >
       <div className="rounded-lg p-8 w-full lg:ml-28 lg:mr-28 lg:mt-16 sm:mt-200">
         <div className="flex justify-between items-center">

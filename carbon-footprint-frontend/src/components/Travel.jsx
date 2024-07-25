@@ -393,7 +393,7 @@ const TravelForm = () => {
   return (
     <div
       style={{ backgroundImage: `url(${backgroundImage})` }}
-      className="bg-cover bg-center p-8 flex flex-col h-screen items-center justify-center"
+      className="bg-cover bg-center p-8 flex flex-col h-fit md:h-screen items-center justify-center"
     >
       <div>
         <div className="rounded-lg w-full">

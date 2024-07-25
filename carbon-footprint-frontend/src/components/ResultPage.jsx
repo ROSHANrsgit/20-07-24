@@ -141,9 +141,9 @@ const EmissionsCard = () => {
     return (
       <div
         style={{ backgroundImage: `url(${backgroundImage})` }}
-        className="bg-cover bg-center flex justify-center items-center min-h-screen"
+        className="bg-cover bg-center flex justify-center items-center h-fit custom:w-full w-fit lg:h-screen"
       >
-        <div className="max-w-md lg:max-w-full mx-auto lg:mx-0 px-6 lg:p-4  rounded-lg mt-8 lg:mt-0 mb-8">
+        <div className="max-w-md lg:max-w-full mx-auto lg:mx-0 px-6 lg:p-4 rounded-lg mt-12 lg:mt-0 mb-8">
           <div className="mb-4">
             <h2 className="text-5xl outfit-bold lg:mb-12 text-[#40A578]">
               Emissions
@@ -151,21 +151,21 @@ const EmissionsCard = () => {
           </div>
 
           <div className="lg:flex lg:gap-8">
-            <div className="lg:flex-1 bg-white p-[35px] lg:w-[500px] rounded-md mb-4 lg:mb-0 border-2 border-[#9DDE8B]">
-              <div className="flex gap-8 items-center border-b-2 border-[#9DDE8B]">
+            <div className="lg:flex-1 bg-white p-[25px] lg:w-[500px] rounded-md mb-4 lg:mb-0 border-2 border-[#9DDE8B]">
+              <div className="flex gap-4 lg:gap-8 items-center border-b-2 border-[#9DDE8B]">
                 <img
                   className="w-28 h-28 lg:w-28 lg:h-28 ml-2"
                   src={img}
                   alt={location.state.source}
                 />
                 <div className="mb-4">
-                  <h3 className="text-lg outfit-semibold">
+                  <h3 className="text-md outfit-semibold">
                     {location.state.source}
                   </h3>
-                  <p className="text-xs outfit-medium ">
+                  <p className="text-xs outfit-medium mb-[4px]">
                     Emission Calculated by
                   </p>
-                  <p className="text-xl lg:text-2xl outfit-bold text-[#40A578]">
+                  <p className="text-sm lg:text-2xl outfit-bold text-[#40A578] leading-[1] lg:leading-[1]">
                     {formData.name.toUpperCase()}
                   </p>
                   <p className="text-xs outfit-medium">Updated time:</p>
@@ -173,38 +173,45 @@ const EmissionsCard = () => {
                 </div>
               </div>
               <div>
-                <p className="text-xs mt-8 outfit-medium">Total Emissions</p>
+                <p className="text-xs lg:text-[14px] mt-8 outfit-bold text-[#40A578]">
+                  Total Emissions (CO2e)
+                </p>
                 <div className="flex justify-between">
                   <div className="text-[40px] lg:text-6xl outfit-medium ">
                     {formatNumber(location.state.emit)}
-                    <span className="text-xs outfit-medium">kg CO2e</span>
+                    <span className="text-xs outfit-medium">kg</span>
                   </div>
-                  <p className="w-28 text-right text-[12px] lg:text-xs outfit-medium">
-                    It takes 40 trees one year to absorb 800kg of CO2e
-                  </p>
+                  <div className="w-28 text-right text-[10px] lg:text-xs outfit-medium leading-[1.25  ] self-center lg:self-end">
+                    It takes 40 trees
+                    <br />
+                    one year to absorb
+                    <br />
+                    800kg of CO2e
+                  </div>
                 </div>
               </div>
-              <div className="flex pt-4 gap-4 justify-between lg:mt-[35px]">
+              <p className="mt-2 lg:mt-8 text-xs lg:text-[14px] outfit-bold text-[#40A578]">
+                Emissions Level
+              </p>
+              <div className="flex gap-4 justify-between lg:mt-2">
                 <div>
                   <p className="text-[10px] lg:text-xs outfit-medium">
-                    Emissions Intensity
+                    Intensity
                   </p>
-                  <div className="text-4xl lg:text-5xl text-center outfit-medium lg:mt-1">
+                  <div className="text-3xl lg:text-[40px] text-left outfit-medium lg:mt-1">
                     {formatNumber(intense)}
                   </div>
                 </div>
                 <div className="lg:ml-4">
-                  <p className="text-[10px] lg:text-xs outfit-medium">
-                    Emissions Level
-                  </p>
+                  <p className="text-[10px] lg:text-xs outfit-medium">Level</p>
                   <div className="text-center mb-2">
                     <div className="text-left">
-                      <div className="outfit-semibold text-2xl lg:text-3xl mb-[2px]">
+                      <div className="outfit-semibold text-md lg:text-2xl mb-[2px]">
                         {progressname}
                       </div>
-                      <div className="w-24 lg:w-32 bg-gray-200 rounded-sm  mb-[2px]">
+                      <div className="w-20 lg:w-32 bg-gray-200 rounded-sm  mb-[2px]">
                         <div
-                          className={`h-full w-full text-xs p-1 rounded-sm ${progressbarbackgroundColor}`}
+                          className={`h-full w-full text-xs p-[3px] rounded-sm ${progressbarbackgroundColor}`}
                           style={{ width: progressbarwidth }}
                         ></div>
                       </div>
@@ -213,9 +220,9 @@ const EmissionsCard = () => {
                 </div>
                 <div>
                   <p className="text-[10px] lg:text-xs outfit-medium">
-                    Emissions Percentage
+                    Percentage
                   </p>
-                  <div className="text-4xl lg:text-5xl text-center outfit-medium lg:mt-1">
+                  <div className="text-3xl lg:text-[40px] text-left outfit-medium lg:mt-1">
                     {perc.toFixed(0)}
                     {"%"}
                   </div>
@@ -223,7 +230,7 @@ const EmissionsCard = () => {
               </div>
             </div>
 
-            <div className="lg:flex-1 bg-white p-[35px] lg:w-[500px] rounded-md border-2 border-[#9DDE8B]">
+            <div className="lg:flex-1 bg-white p-[25px] lg:w-[500px] rounded-md border-2 border-[#9DDE8B]">
               <p className="text-xs outfit-medium">Cost to Offset</p>
               <div className="mb-2 flex justify-between items-center border-b-2 border-[#9DDE8B] pb-4">
                 <p className="text-2xl lg:text-4xl outfit-bold">
@@ -238,7 +245,7 @@ const EmissionsCard = () => {
                 </p>
                 <div className="flex flex-around gap-4">
                   <select
-                    className=" text-left outfit-medium bg-[#efefef] rounded "
+                    className=" text-left text-xs lg:text-[14px] outfit-medium bg-[#efefef] rounded "
                     onChange={handleSelectChange}
                   >
                     <option value="50%">50%</option>
@@ -249,7 +256,7 @@ const EmissionsCard = () => {
                     <option value="200%">200%</option>
                   </select>
                   <button
-                    className="bg-[#9DDE8B] text-white outfit-medium px-3 lg:px-4 py-2 rounded-md hover:bg-[#40A578] focus:outline-none focus:ring-[#40A578] "
+                    className="bg-[#9DDE8B] text-white text-[10px] lg:text-[14px] outfit-medium px-3 lg:px-4 py-2 lg:py-4 rounded-md hover:bg-[#40A578] focus:outline-none focus:ring-[#40A578] "
                     onClick={handlePayment}
                   >
                     Offset Now!
@@ -257,10 +264,10 @@ const EmissionsCard = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4 items-center mt-4">
-                {/* Added QR Image */}
+              {/* Added QR Image */}
+              <div className="flex gap-4 lg:gap-2 items-center mt-4">
                 <div className="flex flex-col ">
-                  <p className="text-[11px] lg:text-[14px] outfit-medium">
+                  <p className="text-[10px] lg:text-[14px] outfit-medium">
                     Go Digital with{" "}
                     <a
                       href="https://www.infi.business "
@@ -271,39 +278,39 @@ const EmissionsCard = () => {
                       www.infi.business
                     </a>
                   </p>
+
                   <img
-                    className="w-60 h-16 lg:w-60 lg:h-24 -mt-4 lg:mt-0 "
+                    className="w-56 h-12 lg:w-60 lg:h-20 lg:mt-0 "
                     src={infi}
                     alt="Infi Business"
                   />
-                  <p className="text-[11px] lg:text-[14px] outfit-medium leading-[1]">
+                  <p className="text-[10px] lg:text-[14px] outfit-medium leading-[1]">
                     You're fighting climate change by funding these projects
                   </p>
-                  <div className="mt-2">
-                    {/* Added Create your infibusiness card button */}
-                    <button
-                      className="mx-auto outfit-medium flex justify-center items-center bg-[#9DDE8B] h-12 lg:w-60 text-center text-white px-4 py-2  rounded-md hover:bg-[#40A578] focus:outline-none focus:ring-[#40A578] text-[11px] lg:text-sm "
-                      onClick={() => {
-                        window.open(
-                          "https://docs.google.com/forms/d/e/1FAIpQLScticnp69X320x_bJYMi8tw1EQdygWkPUNaX4kt2nsbblojhw/viewform?pli=1",
-                          "_blank",
-                          "noopener,noreferrer"
-                        );
-                      }}
-                    >
-                      Create your InfiBusiness Card!
-                    </button>
-                  </div>
                 </div>
                 <img
-                  className="w-40 h-40 lg:w-42 lg:h-42 lg:mt-8"
+                  className="w-[85px] h-[85px] lg:w-32 lg:h-32 lg:mt-8"
                   src={qr}
                   alt="QR Code"
                 />
                 {/* Added Infi Image */}
               </div>
-
-              <div className="text-left outfit-medium text-[11px] lg:text-[14px] mt-4 lg:mt-8 leading-[1]">
+              <div className="mt-2">
+                {/* Added Create your infibusiness card button */}
+                <button
+                  className="outfit-medium flex justify-center items-center bg-[#9DDE8B] h-8 w-full text-center text-white px-4 py-2  rounded-md hover:bg-[#40A578] focus:outline-none focus:ring-[#40A578] text-[10px] lg:text-sm "
+                  onClick={() => {
+                    window.open(
+                      "https://docs.google.com/forms/d/e/1FAIpQLScticnp69X320x_bJYMi8tw1EQdygWkPUNaX4kt2nsbblojhw/viewform?pli=1",
+                      "_blank",
+                      "noopener,noreferrer"
+                    );
+                  }}
+                >
+                  Create your InfiBusiness Card!
+                </button>
+              </div>
+              <div className="text-left outfit-medium text-[10px] lg:text-[14px] mt-4 lg:mt-8 leading-[1]">
                 <p>To know more about carbon offsetting</p>
                 <p>
                   call{" "}
@@ -328,71 +335,76 @@ const EmissionsCard = () => {
     return (
       <div
         style={{ backgroundImage: `url(${backgroundImage})` }}
-        className="bg-cover bg-center flex justify-center items-center min-h-screen"
+        className="bg-cover bg-center flex justify-center items-center h-fit custom:w-full w-fit lg:h-screen"
       >
-        <div className="max-w-md lg:max-w-full mx-auto lg:mx-0 px-6 lg:p-4  rounded-lg mt-8 lg:mt-0 mb-8">
+        <div className="max-w-md lg:max-w-full mx-auto lg:mx-0 px-6 lg:p-4 rounded-lg mt-12 lg:mt-0 mb-8">
           <div className="mb-4">
             <h2 className="text-5xl outfit-bold lg:mb-12 text-[#40A578]">
               Emissions
             </h2>
           </div>
-          <div className="lg:flex  lg:gap-8">
+          <div className="lg:flex lg:gap-8">
             <div className="lg:flex-1 bg-white p-[35px] lg:w-[500px] rounded-md mb-4 lg:mb-0 border-2 border-[#9DDE8B]">
-              <div className="flex gap-8 items-center p-2 border-b-2 border-[#9DDE8B]">
+              <div className="flex gap-4 lg:gap-8 items-center border-b-2 border-[#9DDE8B]">
                 <img
                   className="w-28 h-28 lg:w-28 lg:h-28 ml-2"
                   src={img}
                   alt={location.state.source}
                 />
                 <div className="mb-4">
-                  <h3 className="text-lg outfit-semibold ">
+                  <h3 className="text-md outfit-semibold">
                     {location.state.source}
                   </h3>
                   <p className="text-xs outfit-medium mb-[4px]">
                     Emission Calculated by
                   </p>
-                  <p className="text-xl lg:text-2xl outfit-bold text-[#40A578]">
+                  <p className="text-sm lg:text-2xl outfit-bold text-[#40A578]">
                     {formData.name.toUpperCase()}
                   </p>
                   <p className="text-xs outfit-medium">Updated time:</p>
-                  <p className="text-xs outfit-medium ">{currentTime}</p>
+                  <p className="text-xs outfit-medium">{currentTime}</p>
                 </div>
               </div>
               <div>
-                <p className="text-xs mt-4 lg:mt-8 outfit-medium">
-                  Total Emissions
+                <p className="text-xs lg:text-[14px] mt-8 outfit-bold text-[#40A578]">
+                  Total Emissions (CO2e)
                 </p>
                 <div className="flex justify-between">
-                  <div className="text-[40px] lg:text-6xl outfit-medium">
+                  <div className="text-[40px] lg:text-6xl outfit-medium ">
                     {formatNumber(location.state.emit)}
-                    <span className="text-xs outfit-medium">kg CO2e</span>
+                    <span className="text-xs outfit-medium">kg</span>
                   </div>
-                  <p className="w-28 text-right text-xs outfit-medium">
-                    It takes 40 trees one year to absorb 800kg of CO2e
-                  </p>
+                  <div className="w-28 text-right text-[10px] lg:text-xs outfit-medium leading-[1.25  ] self-center lg:self-end">
+                    It takes 40 trees
+                    <br />
+                    one year to absorb
+                    <br />
+                    800kg of CO2e
+                  </div>
                 </div>
               </div>
-              <div className="flex pt-4 gap-4 justify-between lg:mt-[35px]">
+              <p className="mt-2 lg:mt-8 text-xs lg:text-[14px] outfit-bold text-[#40A578]">
+                Emissions Level
+              </p>
+              <div className="flex gap-4 justify-between lg:mt-2">
                 <div>
                   <p className="text-[10px] lg:text-xs outfit-medium">
-                    Emissions Intensity
+                    Intensity
                   </p>
-                  <div className="text-4xl lg:text-5xl text-center outfit-medium lg:mt-1">
+                  <div className="text-3xl lg:text-[40px] text-left outfit-medium lg:mt-1">
                     {formatNumber(intense)}
                   </div>
                 </div>
                 <div className="lg:ml-4">
-                  <p className="text-[10px] lg:text-xs outfit-medium">
-                    Emissions Level
-                  </p>
+                  <p className="text-[10px] lg:text-xs outfit-medium">Level</p>
                   <div className="text-center mb-2">
                     <div className="text-left">
-                      <div className="outfit-semibold text-2xl lg:text-3xl mb-[2px]">
+                      <div className="outfit-semibold text-md lg:text-2xl mb-[2px]">
                         {progressname}
                       </div>
-                      <div className="w-24 lg:w-32 bg-gray-200 rounded-sm  mb-[2px]">
+                      <div className="w-20 lg:w-32 bg-gray-200 rounded-sm  mb-[2px]">
                         <div
-                          className={`h-full w-full text-xs p-1 rounded-sm ${progressbarbackgroundColor}`}
+                          className={`h-full w-full text-xs p-[3px] rounded-sm ${progressbarbackgroundColor}`}
                           style={{ width: progressbarwidth }}
                         ></div>
                       </div>
@@ -401,9 +413,9 @@ const EmissionsCard = () => {
                 </div>
                 <div>
                   <p className="text-[10px] lg:text-xs outfit-medium">
-                    Emissions Percentage
+                    Percentage
                   </p>
-                  <div className="text-4xl lg:text-5xl text-center outfit-medium lg:mt-1">
+                  <div className="text-3xl lg:text-[40px] text-left outfit-medium lg:mt-1">
                     {perc.toFixed(0)}
                     {"%"}
                   </div>
@@ -425,7 +437,7 @@ const EmissionsCard = () => {
                 </p>
                 <div className="flex flex-around gap-4">
                   <select
-                    className=" text-center border outfit-medium border-gray-300 hover:border-gray-400 rounded"
+                    className="text-left border text-xs lg:text-[14px] outfit-medium border-gray-300 hover:border-gray-400 rounded"
                     onChange={handleSelectChange}
                     value={selectedOption}
                   >
@@ -435,7 +447,7 @@ const EmissionsCard = () => {
                     <option value="200%">200%</option>
                   </select>
                   <button
-                    className="bg-[#9DDE8B] outfit-medium text-white px-3 lg:px-4 py-2 rounded-md hover:bg-[#40A578] focus:outline-none focus:ring-[#40A578] "
+                    className="bg-[#9DDE8B] outfit-medium text-white text-[10px] lg:text-[14px] px-3 lg:px-4 py-2 lg:py-4 rounded-md hover:bg-[#40A578] focus:outline-none focus:ring-[#40A578] "
                     onClick={handlePayment}
                   >
                     Offset Now!
@@ -443,7 +455,7 @@ const EmissionsCard = () => {
                 </div>
               </div>
               <div className=" mb-2">
-                <p className="text-[11px] lg:text-[14px] text-left outfit-medium mt-4">
+                <p className="text-[10px] lg:text-[14px] text-left outfit-medium mt-4">
                   You're fighting climate change by funding these projects:
                 </p>
                 <div className="flex justify-center gap-4 lg:gap-4 mt-4">
@@ -469,7 +481,7 @@ const EmissionsCard = () => {
                         </p>
                       </a>
                     </div>
-                    <p className="text-[11px] lg:text-[14px] outfit-medium text-left mt-2 leading-[1]">
+                    <p className="text-[10px] lg:text-[14px] outfit-medium text-left mt-2 leading-[1]">
                       <span>Planting 10 Million Trees</span> <br />
                       <span>by 2030</span>
                     </p>
@@ -496,13 +508,13 @@ const EmissionsCard = () => {
                         </p>
                       </a>
                     </div>
-                    <p className="text-[11px] lg:text-[14px] outfit-medium text-left mt-2 text-left leading-[1]">
+                    <p className="text-[10px] lg:text-[14px] outfit-medium text-left mt-2 text-left leading-[1]">
                       <span>Protecting Our Seas from</span> <br />
                       <span>Plastic Pollution</span>
                     </p>
                   </div>
                 </div>
-                <div className="text-left outfit-medium text-[11px] lg:text-[14px] mt-4 lg:mt-8 leading-[1]">
+                <div className="text-left outfit-medium text-[10px] lg:text-[14px] mt-4 leading-[1]">
                   <p>To know more about carbon offsetting</p>
                   <p>
                     call{" "}

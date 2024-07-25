@@ -98,3 +98,8 @@
     font-weight: 900;
     font-style: italic;
 }
+
+
+.leading-custom-tight {
+    line-height: 1; /* Adjust the value as needed */
+  }
